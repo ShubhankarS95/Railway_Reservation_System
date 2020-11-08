@@ -1,0 +1,467 @@
+<html>
+<head>
+ <style>
+  input[type="button"].hidden
+  {
+    visibility:hidden
+   }
+   input[type="button"].pt
+  {
+    visibility:hidden
+   } 
+
+ </style>
+
+<script type="text/javascript">
+  
+  var trnno;
+  var trnnm;
+  var sourc;
+  var destn;
+  var at;
+  var dt;  
+ function Checkdetails()
+  {  
+      var indexss = document.getElementById('sourcestation').selectedIndex;
+      var indexds = document.getElementById('destination').selectedIndex;
+      var indexcl = document.getElementById('class').selectedIndex;
+      var clss    = document.getElementById('class').options[indexcl].text;
+      var indexjd = document.getElementById('journeydate').value;     
+      var nop=document.getElementById('noofpersn').selectedIndex;	
+	
+
+      if(indexss==0 || indexds==0 || indexcl==0 || indexjd=="" )
+      {
+        if(indexss==0 )
+        {
+          document.getElementById('checkss').innerHTML="* Please Select an Option";
+         }
+        if(indexds==0 )
+        {
+          document.getElementById('checkds').innerHTML="* Please Select an Option";
+         }
+        if(indexcl==0 )
+        {
+          document.getElementById('checkcls').innerHTML="* Please Select an Option";
+         }
+        if(indexjd=="")
+        {
+           document.getElementById('checkdt').innerHTML="* Please Select an Option";
+         } 
+      }
+      else
+      {  
+          switch(indexss)
+          {
+             case 1: sourc=document.getElementById('sourcestation').options[indexss].text;
+                     switch(indexds)
+                    { case 1: document.getElementById('checkds').innerHTML="* Source station and Destination staion are same ";
+                             break;
+                      case 2: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th> <th> Class </th></tr><tr align=center><td > 1219 </td><td> Duronto Express </td><td>" + nop + "</td><td>"+ indexjd  +" </td><td> 20:32:12 </td><td> 15:15:23</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                              
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="1219";
+                              trnnm="Duronto Express";
+                              at="20:32:12 ";
+                              dt=" 15:15:23";
+                             break;                                                                                                                                                                                                                                                                                                                                  
+                      case 3: document.getElementById('fare').style.visibility="visible";                                                                                                                                                                                                                                                                    
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 1014 </td><td> Jhelum Express     </td><td>" + nop +"</td><td>" + indexjd + " </td><td> 23:18:18 </td><td> 12:32:20</td><td> &emsp;" + clss+"&emsp;</td>  </tr>";
+                             
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="1014";
+                              trnnm=" Jhelum Express";
+                              at=" 23:18:18 ";
+                              dt=" 12:32:20";
+                              break;
+                      case 4: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 2269 </td><td> Rajdhani Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 14:31:19 </td><td> 21:18:18</td><td> &emsp;" + clss+"&emsp;</td>  </tr>";
+                            
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="2269";
+                              trnnm=" Rajdhani Express ";
+                              at="14:31:19";
+                              dt="21:18:18";
+                             break;
+                      case 5: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 1219 </td><td> Tebhaga Express    </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 18:29:45 </td><td> 21:25:33</td> <td> &emsp;" + clss+"&emsp;</td> </tr>";
+                             
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno=" 1219 ";
+                              trnnm="Tebhaga Express ";
+                              at="18:29:45";
+                              dt=" 21:25:33";
+                             break;        
+                     }        
+                    break;
+             case 2:sourc=document.getElementById('sourcestation').options[indexss].text;
+                    switch(indexds)
+                    { case 1:document.getElementById('fare').style.visibility="visible";
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 2532 </td><td> Shatabdi Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 06:45:21 </td><td> 10:12:15</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                            
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno=" 2532 ";
+                             trnnm=" Shatabdi Express ";
+                             at="06:45:21";
+                             dt="10:12:15";
+                            break;
+                      case 2: document.getElementById('checkds').innerHTML="* Source station and Destination staion are same ";
+                            break;                                                                                                                                                                                                                                                                                                                                                                
+                      case 3: document.getElementById('fare').style.visibility="visible";                                                                                                                                                                                                                                                                    
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 3275 </td><td> Azad Hind  Express </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 11:11:61 </td><td> 04:50:52</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                             
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno=" 3275";
+                              trnnm=" Azad Hind  Express ";
+                              at="11:11:61";
+                              dt="04:50:52";
+                             break;
+                      case 4: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 1853 </td><td> Gour Express       </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 10:21:40 </td><td> 21:20:26</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="1853 ";
+                              trnnm="Gour Express ";
+                              at=" 10:21:40 ";
+                              dt="21:20:26"; 
+                            break;
+                      case 5: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 1523 </td><td> Puri  Express  </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 06:25:51 </td><td> 23:40:47</td><td> &emsp;" + clss+"&emsp;</td> </tr> ";
+                              
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="1523";
+                              trnnm=" Puri  Express ";
+                              at=" 06:25:51";
+                              dt="23:40:47";
+                             break;        
+                     }
+                    break;
+             case 3:sourc=document.getElementById('sourcestation').options[indexss].text;
+                    switch(indexds)
+                    { case 1:document.getElementById('fare').style.visibility="visible";
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 5134 </td><td> Punjab Mail </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 14:38:23 </td><td> 18:37:22</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                            
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno="5134";
+                             trnnm=" Punjab Mail ";
+                             at="14:38:23 ";
+                             dt=" 18:37:22";
+                            break;
+                      case 2:document.getElementById('fare').style.visibility="visible";                                                                                                                                                                                                                                                                    
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 3534 </td><td> Coromandal Express </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 04:34:17 </td><td> 02:57:45</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno=" 3534 ";
+                             trnnm=" Coromandal Express ";
+                              at="04:34:17";
+                             dt=" 02:57:45";
+                            break;                                                                                                                                                                                                                                                                                                                                                          
+                      case 3: document.getElementById('checkds').innerHTML="* Source station and Destination staion are same ";
+                             break;                          
+                      case 4: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 3135 </td><td> Nilachal Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 09:18:33 </td><td> 10:34:55</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                             
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="3135 ";
+                              trnnm=" Nilachal Express ";
+                              at=" 09:18:33 ";
+                              dt=" 10:34:55";
+                             break;
+                      case 5: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 1133 </td><td> Punjab Mail   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 01:44:24 </td><td> 06:40:00</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                              
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno=" 1133 ";
+                              trnnm="Punjab Mail";
+                              at=" 01:44:24 ";
+                              dt=" 06:40:00";
+                             break;        
+                     }
+                    break;
+             case 4:sourc=document.getElementById('sourcestation').options[indexss].text;
+                    switch(indexds)
+                    { case 1:document.getElementById('fare').style.visibility="visible";
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 1583 </td><td> Garibrath Express  </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 19:41:02 </td><td> 17:53:23</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                             
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno="1014";
+                             trnnm=" Jhelum Express";
+                             at="19:41:02";
+                             dt="17:53:23";
+                            break;
+                      case 2:document.getElementById('fare').style.visibility="visible";                                                                                                                                                                                                                                                                    
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 1787 </td><td> Rajdhani Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 13:35:08 </td><td> 11:03:56</td><td> &emsp;" + clss+"&emsp;</td> </tr>";
+                             
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno=" 1583";
+                             trnnm="Rajdhani Express ";
+                             at="13:35:08 ";
+                             dt=" 11:03:56";
+                            break;                                                                                                                                                                                                                                                                                                                                                          
+                      case 3: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr><tr align=center><td> 2286 </td><td> Ashram Express     </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 20:48:07 </td><td>01:42:64</td><td> &emsp;" + clss+"&emsp;</td></tr>";
+                             
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno="2286";
+                              trnnm="Ashram Express ";
+                              at="20:48:07";
+                              dt="01:42:64";
+                             break;                          
+                      case 4: document.getElementById('checkds').innerHTML="* Source station and Destination staion are same ";
+                             break;
+                              
+                      case 5: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 1183 </td><td> Rajdhani Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 18:25:03 </td><td> 08:45:23</td><td> &emsp;" + clss+"&emsp;</td></tr>";
+                              
+                              destn=document.getElementById('destination').options[indexds].text;
+                              trnno=" 1183 ";
+                              trnnm="  Rajdhani Express";
+                              at=" 18:25:03  ";
+                              dt="08:45:23";
+                             break;        
+                     }
+                    break;
+             case 5:sourc=document.getElementById('sourcestation').options[indexss].text;
+                    switch(indexds)
+                    { case 1:document.getElementById('fare').style.visibility="visible";
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr>  <tr align=center><td> 1136 </td><td> Janata Express     </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 09:54:28 </td><td> 23:56:40</td><td> &emsp;" + clss+"&emsp;</td></tr>";
+                             
+                             destn=document.getElementById('destination').options[indexds].text;  
+                             trnno="1136";
+                             trnnm=" Janata Express";
+                             at="09:54:28 ";
+                             dt="23:56:40";
+                            break;
+                      case 2:document.getElementById('fare').style.visibility="visible";                                                                                                                                                                                                                                                                    
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 5134 </td><td> Ahmedabad Express  </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 07:14:25 </td><td> 21:57:13</td><td> &emsp;" + clss+"&emsp;</td></tr>";
+
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno=" 5134";
+                             trnnm=" Ahmedabad Express ";
+                             at="07:14:25";
+                             dt="21:57:13";
+                           break;                                                                                                                                                                                                                                                                                                                                                          
+                      case 3: document.getElementById('fare').style.visibility="visible";
+                              document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tralign=center><td> 6116 </td><td> Arravali Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 23:24:34 </td><td> 20:53:34</td><td> &emsp;" + clss+"&emsp;</td></tr>";
+
+                              destn=document.getElementById('destination').options[indexds].text; 
+                              trnno=" 6116";
+                              trnnm="Arravali Express";
+                              at=" 23:24:34";
+                              dt="20:53:34";
+                          break;                          
+                      case 4:document.getElementById('fare').style.visibility="visible";
+                             document.getElementById('status').innerHTML=" <tr><th>Train No.</th><th>Train Name</th><th>No. of Passengers</th><th>Journey date </th><th>Arrival time   </th><th>Departure Time</th><th> Class </th></tr> <tr align=center><td> 1183 </td><td> Rajdhani Express   </td><td>" + nop +"</td><td>" + indexjd +"</td><td> 18:25:03 </td><td> 08:45:23</td><td> &emsp;" + clss+"&emsp;</td></tr>";
+                            
+                             destn=document.getElementById('destination').options[indexds].text;
+                             trnno="1183 ";
+                             trnnm=" Rajdhani Express ";
+                             at="18:25:03 ";
+                             dt=" 08:45:23";  
+                          break;                                      
+                      case 5:  document.getElementById('checkds').innerHTML="* Source station and Destination staion are same ";
+                             break;
+                              
+                     }
+                    break;
+             
+           }
+
+
+       } 
+   }
+   function cleardetails()
+  { var c="";
+    document.getElementById('journeydate').value=c;
+    document.getElementById('destination').selectedIndex=0;
+    document.getElementById('class').selectedIndex=0;
+    document.getElementById('noofpersn').selectedIndex=0;
+    document.getElementById('name1').innerHTML="";
+    document.getElementById('sourcestation').selectedIndex=0;
+    document.getElementById('date').value=resetValue();
+
+
+  }
+  function fare()
+   { 
+     var clas=document.getElementById('class').selectedIndex;
+     var nop=document.getElementById('noofpersn').selectedIndex;
+     var rs;
+     var amt;
+    switch(clas)
+     { case 1:rs=1500;
+              alert('Charges Per head is:-'+rs);
+              amt=rs*nop;
+              document.getElementById('amount').innerHTML="Your Total Amount is :" + amt;
+              document.getElementById('prnt').style.visibility="visible";    
+              break;
+       case 2:rs=1200;
+              alert('Charges Per head is:-'+rs);
+              amt=rs*nop;
+              document.getElementById('amount').innerHTML="Your Total Amount is :" + amt;
+              document.getElementById('prnt').style.visibility="visible";
+              break;
+       case 3:rs=700;
+              alert('Charges Per head is:-'+rs);
+              amt=rs*nop;
+              document.getElementById('amount').innerHTML="Your Total Amount is :" + amt;
+              document.getElementById('prnt').style.visibility="visible";
+              break;
+       case 4:rs=500;
+              alert('Charges Per head is:-'+rs);
+              amt=rs*nop;
+              document.getElementById('amount').innerHTML="Your Total Amount is :" + amt;
+              document.getElementById('prnt').style.visibility="visible";
+              break;
+       
+     }
+   }
+   function textboxputtimg()
+   {  
+        var nop=document.getElementById('noofpersn').selectedIndex;
+        document.getElementById('txtbox').innerHTML="";
+        for(var i=1;i<=nop;i++)
+	    {
+	      var name ="name"+i;
+          var age="age"+i;
+		  
+          document.getElementById('txtbox').innerHTML=document.getElementById('txtbox').innerHTML+'<br>&emsp;&emsp; Enter Your Name:-<input type="text" id='+name+' placeholder="Name" ></input> &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;Enter your Age:-   <input type="text" id='+age+' placeholder="Age" ></input> <br> '; 
+	      // alert( name +'  '+document.getElementById('name').value + ' ' +age +'  '+document.getElementById('age').value );
+	    }
+    }
+   
+ 
+ </script>
+ 
+</head>
+<body background="logoofreservation.jpg">
+<br>
+&emsp;&emsp;
+
+Source Station:- &nbsp;
+<select id="sourcestation">
+ <option selected> Select your choice
+ <option> NEW DELHI 
+ <option> PUNE 
+ <option> MUMBAI 
+ <option> KOLKATA 
+ <option> GOA 
+</select> 
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+Destinaiton Station:- &nbsp;
+<select Id="destination">
+ <option selected> Select your choice
+ <option> NEW DELHI 
+ <option> PUNE 
+ <option> MUMBAI 
+ <option> KOLKATA 
+ <option> GOA 
+</select> 
+
+<br>
+&emsp;&emsp;
+
+<label  style="font-size:18;font-family:Imprint MT Shadow;color:red;"  id="checkss"></label>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+
+<label style="font-size:18;font-family:Imprint MT Shadow;color:red;"  id="checkds"></label>
+
+<br>
+&emsp;&emsp; Journey Date :-&nbsp;
+
+<input type="date" id="journeydate"> </input>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+
+
+Class:- &nbsp;
+<select id="class">
+ <option selected> All Class
+ <option> FIRST AC 
+ <option> SECOND AC 
+ <option> THIRD AC 
+ <option> SLEEPER 
+</select> 
+
+<br>
+&emsp;&emsp;
+
+<label style="font-size:18;font-family:Imprint MT Shadow;color:red;"  id="checkdt"> </label>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+
+<label style="font-size:18;font-family:Imprint MT Shadow;color:red;"  id="checkcls"></label>
+<br>
+&emsp;&emsp;
+Check the no. of persons:-&nbsp;
+<select id="noofpersn" onClick="textboxputtimg()">
+ <option selected> select no. of person
+ <option> 1
+ <option> 2
+ <option> 3
+ <option> 4
+</select> 
+
+<br><br>
+
+
+<label  id="txtbox"> </label>
+
+
+<br>
+<center>
+
+<input type ="Button" style="background-color:Blue;color:White;" value="GET DETAILS" Onclick="Checkdetails()"> </input>
+
+<input type ="Button" style="background-color:Blue;color:white;" id="clr" value="CLEAR" Onclick="cleardetails()"> </input>
+
+<input type ="Button" class="hidden" style="background-color:Blue;color:white;" id="fare" value=" GET FARE " Onclick="fare()"> </input>
+
+<br><br>
+
+<table id="status" border=1 >
+</table>
+<br>
+
+<label  id="amount"></label>
+<br>
+<input type ="Button" class="pt" style="background-color:Blue;color:white;" id="prnt" value=" Print Booked ticket " Onclick="print()"> </input>
+<br><br>
+<script>
+ function print()
+    {
+      
+      var indexss = document.getElementById('sourcestation').selectedIndex;
+      var indexds = document.getElementById('destination').selectedIndex;
+      var indexcl = document.getElementById('class').selectedIndex;
+      var clss    = document.getElementById('class').options[indexcl].text;
+      var indexjd = document.getElementById('journeydate').value;     
+      var nop=document.getElementById('noofpersn').selectedIndex;
+      
+      alert('Wait Printing in process!!!');
+
+      document.getElementById('bookticket').innerHTML= " <tr><th>Train No.</th><th>Train Name</th><th>Passenger Name </th><th> Age </th><th> Class </th><th> Journey date </th><th>Arrival time </th><th>Departure Time</th><th> Source </th><th> Destination </th></tr>";
+      
+      for(var i=1; i<=nop;i++)
+      { 
+          var name ="name"+i;
+          var age="age"+i;
+         
+          var nm = document.getElementById(''+name+'').value;
+          var ag =document.getElementById(''+age+'').value;
+          document.write=document.write + "<tr align=center><td>" + trnno + "</td><td>" + trnnm + "</td><td>" + nm +"</td><td>" + ag +"</td><td> " + clss + "</td><td>" + indexjd + "</td><td> " + at +"</td><td> "+ dt +"</td><td> " + sourc +"</td> <td>" + destn + "</td></tr>";
+      }
+	}
+</script>
+<table id="bookticket" border=1 >
+</table>
+</center>
+
+
+
+</body>
+</html>
